@@ -1,0 +1,26 @@
+{
+  "name": "plaid-vercel",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rhino88/plaid-vercel.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rhino88/plaid-vercel/issues"
+  },
+  "homepage": "https://github.com/rhino88/plaid-vercel#readme",
+  "devDependencies": {
+    "prettier": "^2.0.5",
+    "vercel": "^19.1.1"
+  },
+  "dependencies": {
+    "plaid": "^5.1.0"
+  }
+}
