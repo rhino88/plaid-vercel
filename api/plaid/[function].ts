@@ -127,7 +127,6 @@ export default async (req: NowRequest, res: NowResponse) => {
       plaidClient,
       orderedArguments.length > 0 ? orderedArguments : null
     );
-    console.log(response);
     res.status(200).json({
       status: 200,
       json: response,
