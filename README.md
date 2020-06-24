@@ -2,6 +2,8 @@
 
 A [Vercel Functions](https://vercel.com/docs/v2/serverless-functions/introduction) wrapper around [plaid](https://github.com/plaid/plaid-node). It is important to invoke Plaid calls from a backend service to avoid exposing [private identifiers](https://plaid.com/docs/quickstart/#api-keys) (`secret` and `client_id`) in client-side code, using a serverless implementation makes this easy to manage.
 
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/project?template=https://github.com/rhino88/plaid-vercel)
+
 ## Required Environment Variables
 
 ```
