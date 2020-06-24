@@ -17,10 +17,11 @@
   },
   "homepage": "https://github.com/rhino88/plaid-vercel#readme",
   "devDependencies": {
-    "prettier": "^2.0.5",
-    "vercel": "^19.1.1"
+    "@vercel/node": "1.7.1",
+    "prettier": "2.0.5",
+    "vercel": "19.1.1"
   },
   "dependencies": {
-    "plaid": "^5.1.0"
+    "plaid": "5.1.0"
   }
 }

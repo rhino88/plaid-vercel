@@ -102,7 +102,7 @@ ms@2.0.0:
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.0.0.tgz#5608aeadfc00be6c2901df5f9861788de0d597c8"
   integrity sha1-VgiurfwAvmwpAd9fmGF4jeDVl8g=
 
-plaid@^5.1.0:
+plaid@5.1.0:
   version "5.1.0"
   resolved "https://registry.yarnpkg.com/plaid/-/plaid-5.1.0.tgz#a4feee0c5bf9e7d103b36a82625a78fab21bb820"
   integrity sha512-Dqh+mEUEfHEh04Sqr6gaAuh7Bz/dMZh9WEoSAp8Sh+1MCpImDkjiZIHBkA4haLi1t86ncdOsta51gV2a4pM5bw==
@@ -112,7 +112,7 @@ plaid@^5.1.0:
     bluebird "^3.5.1"
     ramda "0.23.x"
 
-prettier@^2.0.5:
+prettier@2.0.5:
   version "2.0.5"
   resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.0.5.tgz#d6d56282455243f2f92cc1716692c08aa31522d4"
   integrity sha512-7PtVymN48hGcO4fGjybyBSIWDsLU4H4XlvOHfq91pz9kkGlonzwTfYkaIEwiRg/dAJF9YlbsduBAgtYLi+8cFg==
@@ -151,7 +151,7 @@ typescript@3.9.3:
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.9.3.tgz#d3ac8883a97c26139e42df5e93eeece33d610b8a"
   integrity sha512-D/wqnB2xzNFIcoBG9FG8cXRDjiqSTbG2wd8DMZeQyJlP1vfTkIxH4GKveWaEBYySKIg+USu+E+EDIR47SqnaMQ==
 
-vercel@^19.1.1:
+vercel@19.1.1:
   version "19.1.1"
   resolved "https://registry.yarnpkg.com/vercel/-/vercel-19.1.1.tgz#2034911bff81f4d055f5deb9995db1f93552529b"
   integrity sha512-cFKkzkkypdNcO1OQnjVCGSS/lFQQAmWNDIutdi2RYqMW0Pdp/u6XeZPADvDbqVwKi56QthoZybCCdolzNZxHVw==
