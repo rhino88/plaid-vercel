@@ -2,16 +2,17 @@ import { NowRequest, NowResponse } from "@vercel/node";
 
 import plaid, { PlaidError } from "plaid";
 
-console.log(process.env.PLAID_CLIENT_ID);
-console.log(process.env.PLAID_SECRET);
-console.log(process.env.PLAID_PUBLIC_KEY);
-console.log(process.env.PLAID_ENVIRONMENT);
+const environment = process.env.PLAID_ENVIRONMENT ?? "";
+console.log(`ENVIRONMENT: ${environment}`);
+console.log(`CLIENT: ${process.env.PLAID_CLIENT_ID}`);
+console.log(`SECRET: ${process.env.PLAID_SECRET}`);
+console.log(`PUBLIC: ${process.env.PLAID_PUBLIC_KEY}`);
 
 const plaidClient = new plaid.Client(
   process.env.PLAID_CLIENT_ID ?? "",
   process.env.PLAID_SECRET ?? "",
   process.env.PLAID_PUBLIC_KEY ?? "",
-  plaid.environments[process.env.PLAID_ENVIRONMENT ?? ""] ?? ""
+  plaid.environments[environment] ?? ""
 );
 
 // Hack for...
