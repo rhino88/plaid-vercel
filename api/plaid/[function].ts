@@ -2,6 +2,11 @@ import { NowRequest, NowResponse } from "@vercel/node";
 
 import plaid, { PlaidError } from "plaid";
 
+console.log(process.env.PLAID_CLIENT_ID);
+console.log(process.env.PLAID_SECRET);
+console.log(process.env.PLAID_PUBLIC_KEY);
+console.log(process.env.PLAID_ENVIRONMENT);
+
 const plaidClient = new plaid.Client(
   process.env.PLAID_CLIENT_ID ?? "",
   process.env.PLAID_SECRET ?? "",
