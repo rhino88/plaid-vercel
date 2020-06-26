@@ -2,17 +2,15 @@ import { NowRequest, NowResponse } from "@vercel/node";
 
 import plaid, { PlaidError } from "plaid";
 
-const environment = process.env.PLAID_ENVIRONMENT ?? "";
-console.log(`ENVIRONMENT: ${environment}`);
-console.log(`CLIENT: ${process.env.PLAID_CLIENT_ID}`);
-console.log(`SECRET: ${process.env.PLAID_SECRET}`);
-console.log(`PUBLIC: ${process.env.PLAID_PUBLIC_KEY}`);
+const environment = process.env.PLAID_ENVIRONMENT
+  ? process.env.PLAID_ENVIRONMENT
+  : "";
 
 const plaidClient = new plaid.Client(
-  process.env.PLAID_CLIENT_ID ?? "",
-  process.env.PLAID_SECRET ?? "",
-  process.env.PLAID_PUBLIC_KEY ?? "",
-  plaid.environments[environment] ?? ""
+  process.env.PLAID_CLIENT_ID ? process.env.PLAID_CLIENT_ID : "",
+  process.env.PLAID_SECRET ? process.env.PLAID_SECRET : "",
+  process.env.PLAID_PUBLIC_KEY ? process.env.PLAID_PUBLIC_KEY : "",
+  plaid.environments[environment] ? plaid.environments[environment] : ""
 );
 
 // Hack for...
@@ -92,12 +90,18 @@ const createErrorResponse = (
   error: Error | PlaidError
 ): NowResponse =>
   res.status(500).json({
-    code: (error as PlaidError).error_code ?? "",
-    type: (error as PlaidError).error_type ?? "",
-    message: (error as PlaidError).error_message ?? error.message,
-    displayMessage:
-      (error as PlaidError).display_message ??
-      "Unknown error, please try again later.",
+    code: (error as PlaidError).error_code
+      ? (error as PlaidError).error_code
+      : "",
+    type: (error as PlaidError).error_type
+      ? (error as PlaidError).error_type
+      : "",
+    message: (error as PlaidError).error_message
+      ? (error as PlaidError).error_message
+      : error.message,
+    displayMessage: (error as PlaidError).display_message
+      ? (error as PlaidError).display_message
+      : "Unknown error, please try again later.",
     stack: error.stack,
   });
 
