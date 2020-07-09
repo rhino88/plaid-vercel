@@ -1,14 +1,21 @@
 import { NowRequest, NowResponse } from "@vercel/node";
 
-import plaid, { PlaidError } from "plaid";
+import plaid, { PlaidError, Client } from "plaid";
 
-const environment = process.env.PLAID_ENVIRONMENT ?? "";
-console.log(`ENVIRONMENT: ${environment}`);
-console.log(`CLIENT: ${process.env.PLAID_CLIENT_ID}`);
-console.log(`SECRET: ${process.env.PLAID_SECRET}`);
-console.log(`PUBLIC: ${process.env.PLAID_PUBLIC_KEY}`);
+enum Environment {
+  PRODUCTION = "production",
+  DEVELOPMENT = "development",
+  SANDBOX = "sandbox",
+}
 
-const plaidClient = new plaid.Client(
+const environment: Environment =
+  process.env.PLAID_ENVIRONMENT === "production"
+    ? Environment.PRODUCTION
+    : process.env.PLAID_ENVIRONMENT === "development"
+    ? Environment.PRODUCTION
+    : Environment.SANDBOX;
+
+const plaidClient: Client = new plaid.Client(
   process.env.PLAID_CLIENT_ID ?? "",
   process.env.PLAID_SECRET ?? "",
   process.env.PLAID_PUBLIC_KEY ?? "",
